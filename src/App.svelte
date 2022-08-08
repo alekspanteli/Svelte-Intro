@@ -1,33 +1,27 @@
 <script>
 import Nested from './Nested.svelte';
-	// let name = 'world';
-  // let src = 'https://svelte.dev/tutorial/image.gif';
-  // let string = 'this string contains some <strong>HTML!!!</strong>';
-  let count = 0;
+import Arrays from './Arrays.svelte';
 
-	function incrementCount() {
-	count += 1;
-	}
-  
+let cats = [
+		{ id: 'J---aiyznGQ', name: 'Keyboard Cat' },
+		{ id: 'z_AbfPXTKms', name: 'Maru' },
+		{ id: 'OUtn3pvWmpg', name: 'Henri The Existential Cat' }
+	];
+	
 </script>
 
 <style>
-  /* p {
-      color: purple;
-      font-family: 'Comic Sans MS', cursive;
-      font-size: 2em;
-    } */
+ 
 </style>
 
-<!-- <h1>Hello {name.toUpperCase()}!</h1> -->
+<h1>The Famous Cats of YouTube</h1>
 
-<!-- <img src={src} alt="Image goes here">
-
-<p>This is a paragraph.</p>
-<p>{@html string}</p> -->
-
-Clicked {count} {count === 1 ? 'time' : 'times'}
-<button on:click={incrementCount}>Count</button>
-<Nested/>
+<ul>
+	{#each cats as cat}
+		<li><a target="_blank" href="https://www.youtube.com/watch?v={cat.id}">
+			{cat.name}
+		</a></li>
+	{/each}
+</ul>
 
 
