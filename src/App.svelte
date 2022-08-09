@@ -17,9 +17,9 @@ let cats = [
 <h1>The Famous Cats of YouTube</h1>
 
 <ul>
-	{#each cats as cat}
-		<li><a target="_blank" href="https://www.youtube.com/watch?v={cat.id}">
-			{cat.name}
+	{#each cats as { id, name }, i}
+		<li><a target="_blank" href="https://www.youtube.com/watch?v={id}">
+			{i + 1}: {name}
 		</a></li>
 	{/each}
 </ul>
